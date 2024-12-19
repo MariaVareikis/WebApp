@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Homer Simpson",
+    "email": "homer.simpson@springfield.com",
+    "password": "donuts123"
+  },
+  {
+    "id": 2,
+    "name": "Marge Simpson",
+    "email": "marge.simpson@springfield.com",
+    "password": "bluehair456"
+  },
+  {
+    "id": 3,
+    "name": "Bart Simpson",
+    "email": "bart.simpson@springfield.com",
+    "password": "eatmyshorts789"
+  },
+  {
+    "id": 4,
+    "name": "Lisa Simpson",
+    "email": "lisa.simpson@springfield.com",
+    "password": "saxophone123"
+  },
+  {
+    "id": 5,
+    "name": "Maggie Simpson",
+    "email": "maggie.simpson@springfield.com",
+    "password": "pacifier456"
+  },
+  {
+    "id": 6,
+    "name": "Ned Flanders",
+    "email": "ned.flanders@springfield.com",
+    "password": "hidelyho789"
+  },
+  {
+    "id": 7,
+    "name": "Montgomery Burns",
+    "email": "mr.burns@springfield.com",
+    "password": "excellent123"
+  },
+  {
+    "id": 8,
+    "name": "Krusty the Clown",
+    "email": "krusty.clown@springfield.com",
+    "password": "laughs456"
+  },
+  {
+    "id": 9,
+    "name": "Chief Wiggum",
+    "email": "chief.wiggum@springfield.com",
+    "password": "doughnuts789"
+  },
+  {
+    "id": 10,
+    "name": "Milhouse Van Houten",
+    "email": "milhouse.vanhouten@springfield.com",
+    "password": "bestfriend123"
+  },
+  {
+    "id": 11,
+    "name": "Seymour Skinner",
+    "email": "principal.skinner@springfield.com",
+    "password": "steamedhams456"
+  },
+  {
+    "id": 12,
+    "name": "Apu Nahasapeemapetilon",
+    "email": "apu.nahasapeemapetilon@springfield.com",
+    "password": "kwikemart789"
+  },
+  {
+    "id": 13,
+    "name": "Ralph Wiggum",
+    "email": "ralph.wiggum@springfield.com",
+    "password": "choochoo123"
+  },
+  {
+    "id": 14,
+    "name": "Edna Krabappel",
+    "email": "edna.krabappel@springfield.com",
+    "password": "detention456"
+  },
+  {
+    "id": 15,
+    "name": "Waylon Smithers",
+    "email": "smithers@springfield.com",
+    "password": "loyal789"
+  }
+]

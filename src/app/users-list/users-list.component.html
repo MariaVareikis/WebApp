@@ -1,0 +1,38 @@
+<div class="container">
+  <!-- Button to trigger the 'Add User' modal -->
+  <button (click)="showAddUserModal()" class="add-user-button">Add User</button>
+
+  <!-- Container for displaying users -->
+  <div class="users-container">
+    <!-- Loop through users and display each user in a card -->
+    <div
+      *ngFor="let user of users$ | async"
+      class="user-card"
+      (click)="onCardClick(user)"
+    >
+      <p>{{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Password:</strong> {{ user.password }}</p>
+    </div>
+  </div>
+
+  <!-- Add User form modal, shown when 'showAddUserModalFlag' is true -->
+  <app-user-form
+    *ngIf="showAddUserModalFlag"
+    (userAdded)="onUserAdded($event)"
+    (closeModal)="closeAddUserModal()"
+  >
+  </app-user-form>
+
+  <!-- User Detail modal, shown when 'showUpdateUserModalFlag' is true -->
+  <div id="user-detail-modal" class="modal">
+    <app-user-detail
+      *ngIf="showUpdateUserModalFlag && selectedUser"
+      [user]="selectedUser"
+      (userUpdated)="onUserUpdated($event)"
+      (userDeleted)="onUserDeleted($event)"
+      (closeModal)="closeUpdateUserModal()"
+    >
+    </app-user-detail>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+<div class="modal" *ngIf="user">
+  <div class="modal-content">
+    <!-- Close button to dismiss modal -->
+    <span class="close" (click)="onCloseModal()">&times;</span>
+
+    <!-- Modal title based on editing status -->
+    <h2>{{ isEditing ? "Update User" : "User Detail" }}</h2>
+
+    <!-- Form for updating user details, shown only if editing -->
+    <form *ngIf="isEditing" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <!-- Name input field with validation error messages -->
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            updateForm.get('name')?.invalid && updateForm.get('name')?.touched
+          "
+          class="error-message"
+        >
+          <span *ngIf="updateForm.get('name')?.errors?.['required']"
+            >Name is required.</span
+          >
+        </div>
+      </div>
+
+      <!-- Email input field with validation -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            updateForm.get('email')?.invalid && updateForm.get('email')?.touched
+          "
+          class="error-message"
+        >
+          <span *ngIf="updateForm.get('email')?.errors?.['required']"
+            >Email is required.</span
+          >
+          <span *ngIf="updateForm.get('email')?.errors?.['email']"
+            >Invalid email format.</span
+          >
+        </div>
+      </div>
+
+      <!-- Password input field with validation -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            updateForm.get('password')?.invalid &&
+            updateForm.get('password')?.touched
+          "
+          class="error-message"
+        >
+          <span *ngIf="updateForm.get('password')?.errors?.['required']"
+            >Password is required.</span
+          >
+          <span *ngIf="updateForm.get('password')?.errors?.['minlength']"
+            >Password should have at least 6 characters.</span
+          >
+        </div>
+      </div>
+
+      <!-- Submit and cancel buttons -->
+      <div class="form-group">
+        <button
+          type="submit"
+          [disabled]="updateForm.invalid"
+          class="btn btn-primary"
+        >
+          Update
+        </button>
+        <button
+          type="button"
+          (click)="onCloseModal()"
+          class="btn btn-secondary"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+
+    <!-- Display user details if not editing -->
+    <div *ngIf="!isEditing">
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Password:</strong> {{ user.password }}</p>
+
+      <!-- Edit and delete buttons -->
+      <div class="form-group">
+        <button (click)="onEdit()" class="btn btn-primary">Edit</button>
+        <button (click)="onDelete()" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
